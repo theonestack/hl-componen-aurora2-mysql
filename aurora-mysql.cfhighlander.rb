@@ -1,5 +1,5 @@
 CfhighlanderTemplate do
-  Name 'aurora-mysq'
+  Name 'aurora-mysql'
   DependsOn 'vpc'
 
   Parameters do
@@ -29,5 +29,7 @@ CfhighlanderTemplate do
 
     ComponentParam 'EnablePerformanceInsights', defined?(performance_insights) ? performance_insights : false
     ComponentParam 'PerformanceInsightsRetentionPeriod', defined?(performance_insights) && defined?(insights_retention)  ? insights_retention.to_i : 7
+
+    ComponentParam 'NamespaceId' if defined? service_discovery
   end
 end

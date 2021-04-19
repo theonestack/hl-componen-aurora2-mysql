@@ -1,0 +1,7 @@
+test_metadata:
+  type: config
+  name: enable service registry
+  description: If you specify service_registry in the config, it should then expect the namespace component paremeter, and add service_discovery['name'] as the record
+
+service_discovery:
+  name: db
